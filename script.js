@@ -19,26 +19,22 @@ var index = 0;
 function setNav() {
 	console.log("setNav");
 
-	$(".button.next").on("click", function() {
-
-		index = index + 1;
-
+	$(".button").on("click", function() {
+		
+		var isNext = $(this).hasClass("next");
+		
+		if (isNext == true && index != (images.length - 1)) {
+			index = index + 1;
+		} else if (isNext == false && index > 0) {
+			index = index - 1;
+		}
 		updateImage();
+		});
 
-		console.log("click!!");
-	});
-	$(".button.prev").on("click", function() {
-
-		index = index - 1;
-
-		updateImage();
-
-		console.log("click!!");
-	});
 }
 
 /* change the image here */
-function updateIamge() {
+function updateImage() {
 	
 	$(".image-holder").html("<img src='images/" + images[index] + "'/>");
 
