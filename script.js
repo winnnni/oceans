@@ -28,6 +28,18 @@ function setNav() {
 		} else if (isNext == false && index > 0) {
 			index = index - 1;
 		}
+		
+		
+	
+		if ( index == 0) {
+			$(".button.prev").addClass("disabled");
+		} else if (index == (images.length - 1)) {
+			$(".button.next").addClass("disabled");
+		} else {
+			$(".button").removeClass("disabled");
+		}
+
+
 		updateImage();
 		});
 
@@ -44,7 +56,7 @@ function updateImage() {
 
 $(document).ready(function() {
 	$(".image-holder").html("<img src='images/" + images[index] + "'/>");
-
+	$(".button.prev").addClass("disabled");
 	setNav();
 });
 
