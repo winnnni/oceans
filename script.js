@@ -27,6 +27,14 @@ function setNav() {
 
 		console.log("click!!");
 	});
+	$(".button.prev").on("click", function() {
+
+		index = index - 1;
+
+		updateImage();
+
+		console.log("click!!");
+	});
 }
 
 /* change the image here */
